@@ -4,6 +4,8 @@ import { formatError } from "./utils.js"; // Импортируем функци
 
 import { isChecked } from "./switch.js";
 
+import { getStart } from "./timer.js";
+
 export const dateCalcForm = document.getElementById("datecalc");
 const dateCalcResult = document.getElementById("datecalc__result");
 dateCalcForm.addEventListener("submit", handleCalcDates);
