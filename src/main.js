@@ -2,7 +2,11 @@ import { diffDates, diffToHtml } from "./datecalc.js"; // Импортируем
 
 import { formatError } from "./utils.js"; // Импортируем функцию из файла src/utils.js
 
-const dateCalcForm = document.getElementById("datecalc");
+import { isChecked } from "./switch.js";
+
+import { getStart } from "./timer.js";
+
+export const dateCalcForm = document.getElementById("datecalc");
 const dateCalcResult = document.getElementById("datecalc__result");
 dateCalcForm.addEventListener("submit", handleCalcDates);
 function handleCalcDates(event) {
@@ -19,14 +23,3 @@ function handleCalcDates(event) {
       "Для расчета промежутка необходимо заполнить оба поля"
     ); // Если одно из полей не заполнено (или оба), выводим ошибку
 }
-
-const checkbox = document.querySelector(".input-checkbox");
-// const checkboxField = document.querySelector(".field-checkbox");
-
-checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    dateCalcForm.classList.add("hidden");
-  } else {
-    dateCalcForm.classList.add("hidden");
-  }
-});
